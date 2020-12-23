@@ -35,7 +35,7 @@ class Roulette extends Component {
     const nextItem = selectedIndex + turnsMultiplier;
 
     this.state._animatedValue.setValue(activeItem);
-    let animation = Animated.timing(this.state._animatedValue, { toValue: nextItem, easing, duration })
+    let animation = Animated.timing(this.state._animatedValue, { toValue: nextItem, easing, duration, useNativeDriver: true })
     onRotateChange("start");
     animation.start(()=>{
       onRotateChange("stop");
